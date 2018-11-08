@@ -1,4 +1,4 @@
-% f(x) = A*sin(2*pi*f*t)
+% f(t) = A*sin(2*pi*f*t)
 rangeFrom = 0;
 rangeTo = 1;
 step = 0.0001;
@@ -25,5 +25,17 @@ for i = 1:f2
   y2 = [y2, okres];
 endfor
 
+% narysuj sygnal pierszy w pierwszym wierszu
+subplot(3,1,1);
+plot(t,y1);
+
+% drugi sygnal w drugim wierszu
+subplot(3,1,2);
+plot(t,y2);
+
+% trzeci sygnal w trzecim wierszu
+subplot(3,1,3);
 plot(t,y1+y2);
+
+% wlacz siatke na wykresach
 grid on;
