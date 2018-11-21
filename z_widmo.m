@@ -7,7 +7,7 @@ t = rangeFrom:step:rangeTo-step;
 
 % Pierwszy sygnal - sin(x)
 f1 = 2;
-A1 = 2;
+A1 = 1;
 y1 = A1 * sin(2*pi*f1*t);
 
 % Drugi sygnal - prostokatny
@@ -50,6 +50,11 @@ y1_widmo = abs(y1_widmo);     % obliczenie wartosci bezwzglednej dla widma
 y1_widmo = y1_widmo / (fs/2); % podziel amplitude przez polowe ilosc probek
 plot(widmo_t,y1_widmo);
 
+% opis osi dla sygnalu 1
+title("Widmo sygnalu 1");
+xlabel("Czestotliwosc [Hz]");
+ylabel("Amplituda");
+
 % widmo drugiego sygnalu w drugim wierszu
 subplot(3,1,2);
 y2_widmo = abs(fft(y2));
@@ -57,12 +62,22 @@ y2_widmo = abs(y2_widmo);     % obliczenie wartosci bezwzglednej dla widma
 y2_widmo = y2_widmo / (fs/2); % podziel amplitude przez polowe ilosc probek
 plot(widmo_t,y2_widmo);
 
+% opis osi dla sygnalu 2
+title("Widmo sygnalu 2");
+xlabel("Czestotliwosc [Hz]");
+ylabel("Amplituda");
+
 % widmo trzeciego sygnalu w trzecim wierszu
 subplot(3,1,3);
 ysum_widmo = fft(ysum);
 ysum_widmo = abs(ysum_widmo);     % obliczenie wartosci bezwzglednej dla widma
 ysum_widmo = ysum_widmo / (fs/2); % podziel amplitude przez polowe ilosc probek
 plot(widmo_t,ysum_widmo);
+
+% opis osi dla sygnlu 3
+title("Widmo sygnalu 3");
+xlabel("Czestotliwosc [Hz]");
+ylabel("Amplituda");
 
 % wlacz siatke na wykresach
 grid on;
