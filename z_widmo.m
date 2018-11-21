@@ -48,7 +48,7 @@ subplot(3,1,1);
 y1_widmo = fft(y1);
 y1_widmo = abs(y1_widmo);     % obliczenie wartosci bezwzglednej dla widma
 y1_widmo = y1_widmo / (fs/2); % podziel amplitude przez polowe ilosc probek
-plot(widmo_t,y1_widmo);
+stem(widmo_t,y1_widmo);
 
 % opis osi dla sygnalu 1
 title("Widmo sygnalu 1");
@@ -60,7 +60,7 @@ subplot(3,1,2);
 y2_widmo = abs(fft(y2));
 y2_widmo = abs(y2_widmo);     % obliczenie wartosci bezwzglednej dla widma
 y2_widmo = y2_widmo / (fs/2); % podziel amplitude przez polowe ilosc probek
-plot(widmo_t,y2_widmo);
+stem(widmo_t,y2_widmo);
 
 % opis osi dla sygnalu 2
 title("Widmo sygnalu 2");
@@ -72,7 +72,7 @@ subplot(3,1,3);
 ysum_widmo = fft(ysum);
 ysum_widmo = abs(ysum_widmo);     % obliczenie wartosci bezwzglednej dla widma
 ysum_widmo = ysum_widmo / (fs/2); % podziel amplitude przez polowe ilosc probek
-plot(widmo_t,ysum_widmo);
+stem(widmo_t,ysum_widmo);
 
 % opis osi dla sygnlu 3
 title("Widmo sygnalu 3");
